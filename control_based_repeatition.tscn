@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://mn2kx52p3itn"]
+
+[ext_resource type="Shader" path="res://scroll_shader.gdshader" id="1_fcmyu"]
+[ext_resource type="Texture2D" uid="uid://c6dbgmdfl6b1" path="res://TilingBackground.svg" id="1_tkrus"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q1wne"]
+shader = ExtResource("1_fcmyu")
+shader_parameter/Direction = Vector2(-1, -1)
+shader_parameter/Speed = 0.5
+
+[node name="ControlNodeBasedRepeatition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.701675, 0.39925, 0.391843, 1)
+material = SubResource("ShaderMaterial_q1wne")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tkrus")
+stretch_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.92549, 0.572549, 0.764706, 0.490196)
